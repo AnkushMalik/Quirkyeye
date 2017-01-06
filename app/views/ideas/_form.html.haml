@@ -1,0 +1,14 @@
+= simple_form_for @idea ,{multipart: true} do |f|
+    -if @idea.errors.any?
+        #errors
+        %h2
+        =pluralize(@idea.errors.count, "error")
+        prevented this idea from saving
+        %ul
+        - @idea.errors.full_messages.each do |msg|
+            %li =msg
+    .form_group
+    =f.input :title, input_html: { class: 'form-control'}
+    .form_group
+    =f.input :description, input_html: { class: 'form-control'}
+    = f.button :submit, class: "btn btn-primary"
