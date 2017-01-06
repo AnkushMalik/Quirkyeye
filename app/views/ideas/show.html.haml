@@ -1,7 +1,21 @@
-=image_tag @idea.image.url(:medium)
-%h1= @idea.title
-%p=@idea.description
-%p Submitted by
-=@idea.user.email
-=link_to "back",root_path
-=link_to "Edit", edit_idea_path
+#idea_show.row
+  .col-md-8.col-md-offet-2
+    .panel.panel-default
+      .panel-heading.idea_image
+        =image_tag @idea.image.url(:medium)
+      .panel-body
+        %h1= @idea.title
+        %p.description=@idea.description
+        %p
+        Submitted by
+        =@idea.user.email
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+            Submitted by
+            = @idea.user.email
+          .col-md-6
+            .btn-group.pull-right
+              -if current_user==@idea.user
+                =link_to "Edit", edit_idea_path,class: "btn btn-default"

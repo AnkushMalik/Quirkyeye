@@ -20,7 +20,9 @@ class IdeasController < ApplicationController
 
     end
     def edit
-
+        if current_user!=@idea.user
+          redirect_to :root
+        end
     end
     def update
       if @idea.update(find_params)

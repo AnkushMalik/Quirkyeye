@@ -1,3 +1,9 @@
--@idea.each do |idea|
-  =link_to (image_tag idea.image.url(:medium)),idea
-  %h2=link_to idea.title, idea
+#ideas.transition-enabled
+  -@idea.each do |idea|
+    .box.panel.panel-default
+      =link_to (image_tag idea.image.url),idea
+      .panel-body
+        %h2=link_to idea.title, idea
+        %p.user
+          Subitted by
+          =idea.user.email

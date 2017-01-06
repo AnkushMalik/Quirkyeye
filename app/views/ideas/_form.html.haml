@@ -5,7 +5,7 @@
         =pluralize(@idea.errors.count, "error")
         prevented this idea from saving
         %ul
-        - @idea.errors.full_messages.each do |msg|
+        -@idea.errors.full_messages.each do |msg|
             %li =msg
     .form_group
     =f.input :image
