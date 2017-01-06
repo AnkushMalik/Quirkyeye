@@ -1,5 +1,6 @@
-%h1 Edit Page
-=render 'form'
-=link_to "cancel",idea_path
-|
-=link_to "Delete",idea_path,method: :delete,data: {confirm: "Are you sure?" }
+.col-md-6.col-md-offset-3
+  %h1 Edit Page
+  =render 'form'
+  =link_to "cancel",idea_path
+  |
+  =link_to "Delete",idea_path,method: :delete,data: {confirm: "Are you sure?" }
