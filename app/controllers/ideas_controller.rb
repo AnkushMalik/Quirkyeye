@@ -37,7 +37,7 @@ class IdeasController < ApplicationController
     private
 
     def find_params
-      params.require(:idea).permit(:title,:description)
+      params.require(:idea).permit(:title,:description,:image)
     end
 
     def find_idea
